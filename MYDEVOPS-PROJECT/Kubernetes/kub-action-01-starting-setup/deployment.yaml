@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: second-app-deployment
+spec: #specifications
+  replicas: 1 #nomber of pod instances you want the default is one
+  selector:
+    matchLabels: # this is like tag to indentifie all the pod this deployment is controlling
+      app: second-app
+      tier: backend 
+  template: # info about the pods you are creating like images ...
+    metadata:
+      labels:
+        app: second-app
+        tier: backend 
+    spec: # how the pod will be confired
+      containers:
+      - name: second-app-container
+        image: artankeu2025/kuberepos:latest
+        ports:
+        - containerPort: 8080
