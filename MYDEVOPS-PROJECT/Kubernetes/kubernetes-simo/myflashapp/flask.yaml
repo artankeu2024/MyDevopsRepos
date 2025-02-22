@@ -27,4 +27,4 @@ spec:
     spec:
       containers:
         - name: flask
-          image: artankeu2025/authapi:latest
+          image: artankeu2025/kuberepos:4
