@@ -1,33 +1,30 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: auth-service
+  name: flask-service
 spec:
   selector:
-    app: auth
-  type: ClusterIP
+    app: flask
+  type: LoadBalancer
   ports:
     - protocol: TCP
-      port: 3000
-      targetPort: 3000
+      port: 80
+      targetPort: 5000
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: auth-deployment
+  name: flask-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: auth
+      app: flask
   template:
     metadata:
       labels:
-        app: auth
+        app: flask
     spec:
       containers:
-        - name: auth-api
+        - name: flask
           image: artankeu2025/authapi:latest
-          env:
-            - name: TOKEN_KEY
-              value: 'shouldbeverysecure'
