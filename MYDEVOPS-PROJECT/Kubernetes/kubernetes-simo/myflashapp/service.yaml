@@ -6,6 +6,7 @@ spec:
   selector:
     app: flask
   type: LoadBalancer
+  externalTrafficPolicy: Cluster  # Ensures external routing
   ports:
     - protocol: TCP
       port: 80
