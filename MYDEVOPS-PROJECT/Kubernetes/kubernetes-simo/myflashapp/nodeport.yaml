@@ -12,4 +12,4 @@ spec:
     - protocol: TCP
       port: 80        # Service port
       targetPort: 5000 # Container port
-      nodePort: 30080  # Exposed port on worker nodes (30000-32767)
+      nodePort: 30084 # Exposed port on worker nodes (30000-32767)
