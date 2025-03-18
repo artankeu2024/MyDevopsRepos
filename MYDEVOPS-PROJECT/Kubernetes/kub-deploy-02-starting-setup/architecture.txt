@@ -1,0 +1,5 @@
+we have the 2 API
+THE AUTH API : FOR USERS authentication its private
+the users api: public 
+
+nodejs app which allow us to create and log users
